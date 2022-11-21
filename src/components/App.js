@@ -53,8 +53,8 @@ function App() {
   return (
     <div className="app">
       {/* Все задачи */}
-      <tasksContext.Provider value={tasks}> 
-      {/* Если есть какая либо задача то рендерим Tasks, а если нет то рендерим слово wait... */}
+      <tasksContext.Provider value={tasks}>
+        {/* Если есть какая либо задача то рендерим Tasks, а если нет то рендерим слово wait... */}
         {tasks.length === 0 ? <p className='app__wait'>{log}</p> : <Tasks deleteTask={deleteTask} doneTask={doneTask} />}
         {toAdd ? <CreateCard addTask={addTask} /> : <button className='app__add' onClick={() => setToAdd(true)}>Добавить задачу</button>}
       </tasksContext.Provider>
